@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TM_UI/UX — About</title>
+<meta name="description" content="The story behind TM_UI/UX and Tshiamo Mosetlha.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="parallax-root"><canvas id="parallaxCanvas"></canvas></div>
+
+<nav class="site-nav">
+  <a href="home.html" class="nav-logo">TM_UI/UX</a>
+  <div class="nav-controls">
+    <button class="theme-toggle btn-ghost" style="font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; border:1px solid var(--border-ember); background:transparent; color:var(--text-faint); padding:0.5rem 0.9rem; border-radius:2px; cursor:pointer;">Light</button>
+    <button class="leave-site">Leave site</button>
+    <button class="flame-toggle" aria-label="Open menu">
+      <svg viewBox="0 0 24 24"><path d="M12 2c-1 3-4 4.5-4 8a4 4 0 0 0 8 0c0-1-.3-2-1-3 0 1.5-1 2.5-1 2.5.5-3-1-5-2-7.5z"/><path d="M9 14a3 3 0 0 0 6 0"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="nav-overlay">
+  <button class="nav-overlay-close" aria-label="Close menu">&times;</button>
+  <ul class="nav-links">
+    <li><a href="home.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="process.html">Process</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
+
+<header class="page-hero container">
+  <p class="eyebrow">About</p>
+  <h1>Tshiamo Mosetlha</h1>
+</header>
+
+<main class="container">
+  <section style="padding-top:0;">
+    <p>TM_UI/UX is the practice and the alter ego of Tshiamo Mosetlha — a developer working at the line between design and code. The name carries its own logic: TM for the person, UI/UX for the discipline, and the fire for how it gets made.</p>
+    <p style="margin-top:1.4rem;">The philosophy is simple — born in fire, built in code. Every project starts as someone else's vision: a design file, a sketch, a brief. The work is taking that and turning it into something that actually runs — a website, a web app, an Android app — without losing what made the original design worth building.</p>
+    <p style="margin-top:1.4rem;">No house style gets imposed on your project. The design you bring is the design that ships.</p>
+  </section>
+
+  <section>
+    <p class="eyebrow">Approach</p>
+    <h2>What guides the work</h2>
+    <div class="grid" style="margin-top:2rem;">
+      <div class="card">
+        <h3>Your design, exactly</h3>
+        <p>The build follows your design choices — colors, layout, type — without substituting in defaults.</p>
+      </div>
+      <div class="card">
+        <h3>Full-stack, when needed</h3>
+        <p>From frontend interfaces to databases and backend logic, the whole stack is covered.</p>
+      </div>
+      <div class="card">
+        <h3>Web and Android</h3>
+        <p>Whether the product needs to live in a browser or on a phone, both are handled under one roof.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>TM_UI/UX — Tshiamo Mosetlha — Born in fire, built in code</p>
+</footer>
+
+<script src="js/parallax.js"></script>
+<script src="js/nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/gsap-ignition.js"></script>
+<script src="js/gsap-ember-stagger.js"></script>
+</body>
+</html>

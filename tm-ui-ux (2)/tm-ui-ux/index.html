@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TM_UI/UX — Tshiamo Mosetlha</title>
+<meta name="description" content="TM_UI/UX. Born in fire, built in code. IT solutions, websites and applications by Tshiamo Mosetlha.">
+<script>
+  (function () {
+    var saved = localStorage.getItem('tmui_theme');
+    if (saved === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  })();
+</script>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  body { margin: 0; overflow: hidden; }
+  .splash-wrap {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: var(--bg-void);
+  }
+  #splashCanvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .splash-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 8vh;
+    pointer-events: none;
+  }
+  .splash-tagline {
+    text-align: center;
+    margin-bottom: 2.2rem;
+  }
+  .splash-tagline .name {
+    font-size: 0.78rem;
+    letter-spacing: 0.32em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+  .splash-tagline .tag {
+    font-size: 0.68rem;
+    letter-spacing: 0.26em;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    margin-top: 0.6rem;
+  }
+  .enter-btn {
+    pointer-events: auto;
+    background: transparent;
+    border: 1px solid var(--border-ember-strong);
+    color: var(--flame-amber);
+    font-size: 0.78rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    padding: 0.9rem 2.6rem;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .enter-btn:hover {
+    background: var(--flame-red);
+    color: var(--text-primary);
+    box-shadow: 0 0 26px var(--border-ember-strong);
+  }
+  .skip-hint {
+    pointer-events: none;
+    position: absolute;
+    bottom: 2.4rem;
+    right: 2rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+  .fade-out {
+    animation: fadeToHome 0.9s ease forwards;
+  }
+  @keyframes fadeToHome {
+    to { opacity: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="splash-wrap" id="splashWrap">
+  <canvas id="splashCanvas"></canvas>
+  <div class="splash-overlay">
+    <div class="splash-tagline">
+      <div class="name">Tshiamo Mosetlha</div>
+      <div class="tag">Born in fire — built in code</div>
+    </div>
+    <button class="enter-btn" id="enterBtn">Enter</button>
+  </div>
+  <div class="skip-hint" id="skipHint">Click Enter to skip ahead</div>
+</div>
+
+<script src="js/fire-spiral.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const canvas = document.getElementById('splashCanvas');
+  const wrap = document.getElementById('splashWrap');
+  const enterBtn = document.getElementById('enterBtn');
+  const skipHint = document.getElementById('skipHint');
+
+  let goneAlready = false;
+
+  function goHome() {
+    if (goneAlready) return;
+    goneAlready = true;
+    sessionStorage.setItem('tmui_splash_seen', '1');
+    wrap.classList.add('fade-out');
+    setTimeout(() => { window.location.href = 'home.html'; }, 850);
+  }
+
+  const spiral = createFireSpiral(canvas, {
+    nameSize: 56,
+    onCycleComplete: () => {
+      // The full forward → reverse → flare movie just finished once.
+      // Wait 5 seconds, then move to Home.
+      if (skipHint) skipHint.textContent = 'Entering in 5s';
+      let remaining = 5;
+      const waitTimer = setInterval(() => {
+        remaining--;
+        if (skipHint) skipHint.textContent = `Entering in ${remaining}s`;
+        if (remaining <= 0) {
+          clearInterval(waitTimer);
+          goHome();
+        }
+      }, 1000);
+    }
+  });
+
+  enterBtn.addEventListener('click', goHome);
+
+  // If splash was already seen this session, skip straight to home
+  if (sessionStorage.getItem('tmui_splash_seen') === '1') {
+    window.location.href = 'home.html';
+  }
+});
+</script>
+</body>
+</html>
