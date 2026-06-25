@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TM_UI/UX — Until next time</title>
+<script>
+  (function () {
+    var saved = localStorage.getItem('tmui_theme');
+    if (saved === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  })();
+</script>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  body { margin: 0; overflow: hidden; }
+  .leave-wrap {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: var(--bg-void);
+  }
+  #ashCanvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .leave-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    pointer-events: none;
+  }
+  .leave-overlay h1 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    background: linear-gradient(90deg, var(--ash-light), var(--ash-cool));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 1rem;
+  }
+  .leave-overlay p {
+    color: var(--text-faint);
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+  }
+  .return-btn {
+    pointer-events: auto;
+    margin-top: 2.4rem;
+    background: transparent;
+    border: 1px solid var(--border-ember);
+    color: var(--ash-light);
+    font-size: 0.74rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.8rem 2.2rem;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: border-color 0.3s ease, color 0.3s ease;
+  }
+  .return-btn:hover {
+    border-color: var(--ash-light);
+    color: var(--text-primary);
+  }
+</style>
+</head>
+<body>
+
+<div class="leave-wrap">
+  <canvas id="ashCanvas"></canvas>
+  <div class="leave-overlay">
+    <h1>The fire settles.</h1>
+    <p>Thank you for visiting TM_UI/UX</p>
+    <button class="return-btn" id="returnBtn">Return to site</button>
+  </div>
+</div>
+
+<script src="js/ash-fade.js"></script>
+<script>
+  const canvas = document.getElementById('ashCanvas');
+  createAshFade(canvas);
+
+  document.getElementById('returnBtn').addEventListener('click', () => {
+    window.location.href = 'home.html';
+  });
+</script>
+</body>
+</html>

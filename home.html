@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TM_UI/UX — Home</title>
+<meta name="description" content="TM_UI/UX. IT solutions, websites and applications built from your designs, by Tshiamo Mosetlha.">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .hero {
+    position: relative;
+    height: 92vh;
+    min-height: 560px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    overflow: hidden;
+  }
+  #heroCanvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .hero-foot {
+    position: absolute;
+    bottom: 6vh;
+    left: 0; right: 0;
+    text-align: center;
+    z-index: 2;
+  }
+  .hero-foot p {
+    margin: 0 auto;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+  }
+  .intro-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap-lg);
+    align-items: start;
+  }
+  @media (max-width: 760px) {
+    .intro-row { grid-template-columns: 1fr; }
+  }
+  .service-list { list-style: none; margin-top: 1rem; }
+  .service-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-ember);
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+  .cta-band {
+    text-align: center;
+    padding: var(--gap-xl) 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="parallax-root"><canvas id="parallaxCanvas"></canvas></div>
+
+<nav class="site-nav">
+  <a href="home.html" class="nav-logo">TM_UI/UX</a>
+  <div class="nav-controls">
+    <button class="theme-toggle btn-ghost" style="font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; border:1px solid var(--border-ember); background:transparent; color:var(--text-faint); padding:0.5rem 0.9rem; border-radius:2px; cursor:pointer;">Light</button>
+    <button class="leave-site">Leave site</button>
+    <button class="flame-toggle" aria-label="Open menu">
+      <svg viewBox="0 0 24 24"><path d="M12 2c-1 3-4 4.5-4 8a4 4 0 0 0 8 0c0-1-.3-2-1-3 0 1.5-1 2.5-1 2.5.5-3-1-5-2-7.5z"/><path d="M9 14a3 3 0 0 0 6 0"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="nav-overlay">
+  <button class="nav-overlay-close" aria-label="Close menu">&times;</button>
+  <ul class="nav-links">
+    <li><a href="home.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="process.html">Process</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
+
+<header class="hero">
+  <canvas id="heroCanvas"></canvas>
+  <div class="hero-foot">
+    <p>IT solutions, websites and applications — built from your designs.</p>
+  </div>
+</header>
+
+<main>
+  <section class="container">
+    <div class="intro-row">
+      <div>
+        <p class="eyebrow">About the studio</p>
+        <h2>Built in code, shaped by your vision.</h2>
+        <p>TM_UI/UX is the practice of Tshiamo Mosetlha — a developer who takes your designs and turns them into working websites and applications. No guessing at what you want; you bring the design, the build follows it exactly.</p>
+        <p style="margin-top:1rem;"><a href="about.html" class="btn btn-ghost">Read the story</a></p>
+      </div>
+      <div>
+        <p class="eyebrow">What I build</p>
+        <ul class="service-list">
+          <li>Custom websites from your design files</li>
+          <li>Web applications, full-stack</li>
+          <li>Android applications</li>
+          <li>UI/UX implementation &amp; refinement</li>
+        </ul>
+        <p style="margin-top:1rem;"><a href="services.html" class="btn btn-ghost">See all services</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <p class="eyebrow">Selected work</p>
+    <h2>Recent builds</h2>
+    <div class="grid" style="margin-top:2rem;">
+      <div class="card">
+        <p class="index">01</p>
+        <h3>COSUP V2</h3>
+        <p>A full-stack web and Android platform for a community substance-use support programme, built end-to-end with PHP, MySQL, and Kotlin.</p>
+      </div>
+      <div class="card">
+        <p class="index">02</p>
+        <h3>Your project here</h3>
+        <p>Bring your design — this is where it gets built.</p>
+      </div>
+    </div>
+    <p style="margin-top:2rem;"><a href="projects.html" class="btn btn-ghost">View all projects</a></p>
+  </section>
+
+  <section class="cta-band container">
+    <p class="eyebrow">Start a project</p>
+    <h2>Have a design ready?</h2>
+    <p style="margin:1rem auto 2rem;">Send it over and let's talk about turning it into a working product.</p>
+    <a href="contact.html" class="btn">Get in touch</a>
+  </section>
+</main>
+
+<footer>
+  <p>TM_UI/UX — Tshiamo Mosetlha — Born in fire, built in code</p>
+</footer>
+
+<script src="js/fire-spiral.js"></script>
+<script src="js/parallax.js"></script>
+<script src="js/nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/gsap-ignition.js"></script>
+<script src="js/gsap-ember-stagger.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const heroCanvas = document.getElementById('heroCanvas');
+  createFireSpiral(heroCanvas, { nameSize: 54, idle: true, interactive: false });
+});
+</script>
+</body>
+</html>

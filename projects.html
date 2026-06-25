@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TM_UI/UX — Projects</title>
+<meta name="description" content="Work built by TM_UI/UX.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="parallax-root"><canvas id="parallaxCanvas"></canvas></div>
+
+<nav class="site-nav">
+  <a href="home.html" class="nav-logo">TM_UI/UX</a>
+  <div class="nav-controls">
+    <button class="theme-toggle btn-ghost" style="font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; border:1px solid var(--border-ember); background:transparent; color:var(--text-faint); padding:0.5rem 0.9rem; border-radius:2px; cursor:pointer;">Light</button>
+    <button class="leave-site">Leave site</button>
+    <button class="flame-toggle" aria-label="Open menu">
+      <svg viewBox="0 0 24 24"><path d="M12 2c-1 3-4 4.5-4 8a4 4 0 0 0 8 0c0-1-.3-2-1-3 0 1.5-1 2.5-1 2.5.5-3-1-5-2-7.5z"/><path d="M9 14a3 3 0 0 0 6 0"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="nav-overlay">
+  <button class="nav-overlay-close" aria-label="Close menu">&times;</button>
+  <ul class="nav-links">
+    <li><a href="home.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="process.html">Process</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
+
+<header class="page-hero container">
+  <p class="eyebrow">Projects</p>
+  <h1>Selected work</h1>
+</header>
+
+<main class="container">
+  <section style="padding-top:0;">
+    <div class="grid">
+      <div class="card">
+        <p class="index">01</p>
+        <h3>COSUP V2</h3>
+        <p>A full-stack web and Android platform built for a Community Oriented Substance Use Programme in Tshwane. PHP and MySQL on the web side, Kotlin and Room on Android, Firebase authentication, and OpenStreetMap-based location features across both. Built as part of a Work Integrated Learning project with a development team.</p>
+      </div>
+      <div class="card">
+        <p class="index">02</p>
+        <h3>Your project</h3>
+        <p>This space is open. Bring a design and a brief, and the next entry here is yours.</p>
+        <p style="margin-top:1rem;"><a href="contact.html" class="btn btn-ghost">Start a project</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>TM_UI/UX — Tshiamo Mosetlha — Born in fire, built in code</p>
+</footer>
+
+<script src="js/parallax.js"></script>
+<script src="js/nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/gsap-ignition.js"></script>
+<script src="js/gsap-ember-stagger.js"></script>
+</body>
+</html>
